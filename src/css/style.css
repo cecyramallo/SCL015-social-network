@@ -1,0 +1,125 @@
+body {
+  background-color: white;
+}
+
+h1 {
+  font-family: "Shadows Into Light Two";
+  text-align: justify;
+  color: #5375e2;
+  text-align: center;
+  /* max-width: 850px; */
+  width: 100%;
+  font-size: 175%;
+  margin-top: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background: #333944;
+  margin: 2%;
+  border-radius: 5px;
+}
+.box {
+  width: 100%;
+  height: 200px;
+  background: #ccc;
+  overflow: hidden;
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+}
+@supports (object-fit: cover) {
+  .box img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+.containerExplanation {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.explanationBox {
+  background-color: #ede3e0;
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  margin: 5px;
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)), drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.containerLogin {
+  border-radius: 2px;
+  background-color: #cd9ea3;
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  flex-direction: column;
+  margin: 5%;
+  align-self: flex-start;
+}
+.input_name {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  height: 30px;
+  background-color: #ede3e0;
+  color: #777799;
+  padding-left: 30px;
+}
+.buttonLogin {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  height: 40px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)), drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)), drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  color: #777799;
+  background-color: #ede3e0;
+}
+
+.containerIcons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  margin: 5px;
+  width: 100px;
+  height: 70px;
+}
+
+.socialIcons img {
+  border-radius: 50px;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+}
+h2{
+  font-family: "Shadows Into Light Two";
+  text-align: justify;
+  color: #5375e2;
+  text-align: center;
+  margin: 5px;
+   
+ 
+
+}
