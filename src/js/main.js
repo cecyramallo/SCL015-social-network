@@ -1,6 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 import { myFunction } from './index.js';
-import { login } from '../view/1templateLogin';
+import { login } from '../view/1templateLogin.js';
 
 //For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -16,5 +16,5 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 myFunction();
-
+//Función login de página Bienvenida
 document.getElementById("root").innerHTML= login(); 
