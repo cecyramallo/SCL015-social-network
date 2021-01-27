@@ -1,0 +1,1 @@
+import {login} from "./view/1templateHome.js";

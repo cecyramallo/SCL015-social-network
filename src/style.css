@@ -34,9 +34,11 @@ h1 {
 }
 
 .box img {
-  width: 100%;
-  height: auto;
+  background-image: url(../src/images/04_Family_a.jpg)
+  /* width: 100%; */
+  /* height: auto; */
 }
+
 @supports (object-fit: cover) {
   .box img {
     height: 100%;
