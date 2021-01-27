@@ -1,5 +1,10 @@
+import { router } from "../router.js";
+import { ir_google } from "../js/index.js";
+
 export const login = () => {
-    const viewLogin = ` 
+  const viewLogin = document.createElement("div");
+  viewLogin.innerHTML = `
+
       <h1 href="#/">“PARENTBOOK”</h1>
       <div class="container">
         <div class="box">
@@ -12,11 +17,27 @@ export const login = () => {
         <button class="buttonLogin">Log in</button>
         <p>Or log in with</p>
         <containerIcons class="containerIcons">
-          <icons class="socialIcons"><img src="images/02_Google_a.png" onclick="ir_google()"/></icons>
+          <icons class="socialIcons" id='iconGoogle'><img src="images/02_Google_a.png" /></icons>
           <icons class="socialIcons"><img src="images/01_Facebook.png" onclick="ir_face()"/></icons>
         </containerIcons>
-        <p>Don't have an account yet? Sign up!</p>
+        <p id='login'>Don't have an account yet? Sign up!</p>
       </containerLogin>
-      `
-    return viewLogin;
+      `;
+      
+  const iconGoogle = viewLogin.querySelector("#iconGoogle");
+
+  iconGoogle.addEventListener("click",() => {
+    ir_google()
+
+  });
+  const login = viewLogin.querySelector("#login");
+
+  login.addEventListener("click", function (event) {
+    router("register");
+  });
+  return viewLogin;
 };
+
+// const ir_goole = () => {
+//   console.log("irgoogle");
+// };
