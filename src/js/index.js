@@ -1,5 +1,5 @@
-// aqui exportaras las funciones que necesites
 import { router, changeRoute } from "../router.js";
+
 export const myFunction = () => {
   // aqui tu codigo
   console.log('Hola mundo!');
