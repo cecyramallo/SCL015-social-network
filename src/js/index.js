@@ -4,7 +4,6 @@ export const myFunction = () => {
   // aqui tu codigo
   console.log('Hola mundo!');
 };
-
 export const ir_google = () => {
   var provider = new firebase.auth.GoogleAuthProvider();
   

@@ -1,8 +1,7 @@
 import { router } from "../router.js";
 import { ir_google } from "../js/index.js";
-
 export const login = () => {
-  const viewLogin = document.createElement("div");
+  const viewLogin = document.createElement("div"); 
   viewLogin.innerHTML = `
 
       <h1 href="#/">“PARENTBOOK”</h1>
