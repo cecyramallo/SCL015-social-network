@@ -1,6 +1,6 @@
 import { login } from "./view/1templateLogin.js";
 import { register } from "./view/2templateRegister.js";
-import { wall } from "./view/3templateWall.js";
+import { wall } from "./view/4templateWall.js";
 
 export const changeRoute=(hash)=>{
     if(hash==='#/'){

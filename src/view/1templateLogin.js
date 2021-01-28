@@ -4,7 +4,7 @@ export const login = () => {
   const viewLogin = document.createElement("div"); 
   viewLogin.innerHTML = `
 
-      <h1 href="#/">“PARENTBOOK”</h1>
+      <h1 href="#/">PARENTBOOK</h1>
       <div class="container">
         <div class="box">
           <img src="images/04_Family_a.jpg"/>
