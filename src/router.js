@@ -7,27 +7,31 @@ export const showTemplate = (hash) => {
   const containerRoot = document.getElementById("root");
   containerRoot.innerHTML='';
   switch (hash) {
-    case "login":
+    case '':
       containerRoot.appendChild(login());
       break;
-    case "register":
+    case '#/login':
+      containerRoot.appendChild(login());
+      break;
+    case '#/signup':
       containerRoot.appendChild(register());
       break;    
-    case "wall":
+    case '#/wall':
       containerRoot.appendChild(wall());
       break;
-    case "profile":
+    case '#/profile':
       containerRoot.appendChild(profile());
       break;
     default:
-      containerRoot.innerHTML = `<h2>Oops! 404: Not found</h2> <img src="./assets/front-end.png" id="front-end">`;
-      break;
+      containerRoot.innerHTML = `<h2>Oops! 404: Not found</h2>`;
   }
 };
 
 export const changeRoute = (hash) => {
-  if(hash==='#/'){
-    return showTemplate(hash)
+  if (hash==='#/') {
+    return showTemplate(hash);
+  } else if (hash === '#/login') {
+    return showTemplate(hash);
   } else if (hash === '#/signup') {
     return showTemplate(hash);
   } else if (hash === '#/wall') {
