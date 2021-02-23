@@ -1,4 +1,5 @@
 import { showTemplate } from "../router.js";
+//import { profile } from "./view/4_template_Profile.js";
 
 export const wall = () => {
   const viewWall = document.createElement("div");
@@ -9,13 +10,20 @@ export const wall = () => {
           <img src="images/04_Family_a.jpg"/>
         </div>
       </div> 
-      MESSAGE WALL
+      <p>This is your wall</p>
+      <br>
+      <button id="go-profile" href="#/profile">Go to your profile</button>
+      <button id="logout" href="#/">Log out</button>
       `;
 
-  const foto = viewWall.querySelector("#foto");
-
-  foto.addEventListener("click", function (event) {
-    showTemplate("register");
+  const goProfile = viewWall.querySelector("#go-profile");
+  goProfile.addEventListener("click",() => {
+    window.location.href = "#/profile";
+  });
+  
+  const logout = viewWall.querySelector("#logout");
+  logout.addEventListener("click",() => {
+    window.location.href = "#/";
   });
 
   return viewWall;

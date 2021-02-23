@@ -1,4 +1,4 @@
-export const ir_google = () => {
+export const go_google = () => {
   var provider = new firebase.auth.GoogleAuthProvider();
   
   firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -9,10 +9,8 @@ export const ir_google = () => {
     console.log(result);
   });
 }
- 
-export const ir_face = () => {
-  auth.signOut();
-  console.log('User signed out!');
+
+export const go_facebook = () => {
   var provider = new firebase.auth.FacebookAuthProvider();
   // You can add additional scopes to the provider:
   provider.addScope('email');

@@ -17,16 +17,17 @@ export const register = () => {
         <button class="buttonLogin">Sign up</button>
         <p>Or sign up with</p>
         <containerIcons class="containerIcons">
-          <icons class="socialIcons"><img src="images/02_Google_a.png" onclick="ir_google()"/></icons>
-          <icons class="socialIcons"><img src="images/01_Facebook.png" onclick="ir_face()"/></icons>
+          <icons class="socialIcons"><img src="images/02_Google_a.png" onclick="go_google()"/></icons>
+          <icons class="socialIcons"><img src="images/01_Facebook.png" onclick="go_facebook()"/></icons>
         </containerIcons>
-        <p id='login'>Do you have an account? Log in!</p>
+        <p id='login'>Do you already have an account? Log in!</p>
       </containerLogin>
       `;
-  const login = viewRegister.querySelector("#login");
 
+  const login = viewRegister.querySelector("#login");
   login.addEventListener("click", () => {
-    showTemplate("login");
+    window.location.href = "#/";
   });
+
   return viewRegister;
 };

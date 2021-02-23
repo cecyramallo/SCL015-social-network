@@ -10,7 +10,7 @@ export const showTemplate = (hash) => {
     case '':
       containerRoot.appendChild(login());
       break;
-    case '#/login':
+    case '#/':
       containerRoot.appendChild(login());
       break;
     case '#/signup':
@@ -30,7 +30,7 @@ export const showTemplate = (hash) => {
 export const changeRoute = (hash) => {
   if (hash==='#/') {
     return showTemplate(hash);
-  } else if (hash === '#/login') {
+  } else if (hash === '#/') {
     return showTemplate(hash);
   } else if (hash === '#/signup') {
     return showTemplate(hash);
