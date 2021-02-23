@@ -20,23 +20,19 @@ export const login = () => {
           <icons class="socialIcons" id='iconGoogle'><img src="images/02_Google_a.png" /></icons>
           <icons class="socialIcons"><img src="images/01_Facebook.png" onclick="ir_face()"/></icons>
         </containerIcons>
-        <p id='login'>Don't have an account yet? Sign up!</p>
+        <p id='signup'>Don't have an account yet? Sign up!</p>
       </containerLogin>
       `;
       
-  const iconGoogle = viewLogin.querySelector("#iconGoogle");
-
-  iconGoogle.addEventListener("click",() => {
+const iconGoogle = viewLogin.querySelector("#iconGoogle");
+iconGoogle.addEventListener("click",() => {
     ir_google(showTemplate());
-  });
-  const login = viewLogin.querySelector("#login");
+    window.location.href = "#/wall";
+});
 
-  login.addEventListener("click", function (event) {
-    showTemplate("register");
+const login = viewLogin.querySelector("#signup");
+login.addEventListener("click", () => {
+    window.location.href = "#/signup";
   });
   return viewLogin;
 };
-
-// const ir_goole = () => {
-//   console.log("irgoogle");
-// };
