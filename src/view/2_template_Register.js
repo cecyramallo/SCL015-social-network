@@ -1,4 +1,5 @@
-import { router } from "../router.js";
+import { showTemplate } from "../router.js";
+
 export const register = () => {
   const viewRegister = document.createElement("div");
   viewRegister.innerHTML = `
@@ -25,7 +26,7 @@ export const register = () => {
   const login = viewRegister.querySelector("#login");
 
   login.addEventListener("click", () => {
-    router("login");
+    showTemplate("login");
   });
   return viewRegister;
 };

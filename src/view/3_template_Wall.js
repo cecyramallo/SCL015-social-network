@@ -1,4 +1,5 @@
-import { router } from "../router.js";
+import { showTemplate } from "../router.js";
+
 export const wall = () => {
   const viewWall = document.createElement("div");
   viewWall.innerHTML = `
@@ -14,7 +15,7 @@ export const wall = () => {
   const foto = viewWall.querySelector("#foto");
 
   foto.addEventListener("click", function (event) {
-    router("register");
+    showTemplate("register");
   });
 
   return viewWall;

@@ -1,5 +1,6 @@
-import { router } from "../router.js";
-import { ir_google } from "../js/index.js";
+import { showTemplate } from "../router.js";
+import { ir_google } from "../js/functions.js";
+
 export const login = () => {
   const viewLogin = document.createElement("div"); 
   viewLogin.innerHTML = `
@@ -26,13 +27,12 @@ export const login = () => {
   const iconGoogle = viewLogin.querySelector("#iconGoogle");
 
   iconGoogle.addEventListener("click",() => {
-    ir_google()
-
+    ir_google(showTemplate());
   });
   const login = viewLogin.querySelector("#login");
 
   login.addEventListener("click", function (event) {
-    router("register");
+    showTemplate("register");
   });
   return viewLogin;
 };
