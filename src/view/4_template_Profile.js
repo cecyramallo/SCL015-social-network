@@ -13,4 +13,4 @@ export const profile = () => {
   });
   
   return viewProfile;
-};
+}; 

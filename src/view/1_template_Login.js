@@ -12,7 +12,7 @@ export const login = () => {
         </div>
       </div> 
       <containerLogin class="containerLogin">
-        <input type="text" class="input_name" name="name" id="name" placeholder="User Name"/>
+        <input type="email" class="input_name" name="name" id="name" placeholder="E-mail"/>
         <input type="password" class="input_name" name="name" id="name" placeholder="Password"/>
         <button class="buttonLogin">Log in</button>
         <p>Or log in with</p>
