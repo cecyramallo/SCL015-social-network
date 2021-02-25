@@ -10,11 +10,12 @@ export const register = () => {
         </div>
       </div> 
       <containerLogin class="containerLogin">
-        <input type="text" class="input_name" name="name" id="name" placeholder="First Name"/>
-        <input type="password" class="input_name" name="name" id="name" placeholder="Last Name"/>
-        <input type="text" class="input_name" name="name" id="name" placeholder="User Name"/>
-        <input type="password" class="input_name" name="name" id="name" placeholder="Password"/>
-        <button class="buttonLogin">Sign up</button>
+        <input type="text" class="input_name" name="name" id="first-name" placeholder="First Name"/>
+        <input type="text" class="input_name" name="name" id="last-name" placeholder="Last Name"/>
+        <input type="email" class="input_name" name="name" id="e-mail" placeholder="E-mail"/>
+        <input type="password" class="input_name" name="name" id="password" placeholder="Password"/>
+        <input type="password" class="input_name" name="name" id="repeat-password" placeholder="Repeat password"/>
+        <button class="buttonLogin" id="signup-button">Sign up</button>
         <p>Or sign up with</p>
         <containerIcons class="containerIcons">
           <icons class="socialIcons"><img src="images/02_Google_a.png" onclick="go_google()"/></icons>
@@ -29,5 +30,27 @@ export const register = () => {
     window.location.href = "#/";
   });
 
+  const loginButton = viewRegister.querySelector("#signup-button");
+  loginButton.addEventListener("click", createAccount); 
+  
   return viewRegister;
 };
+
+export const createAccount = () => {
+  let firstName = document.querySelector("#first-name").value;
+  console.log(firstName);
+  
+  let lastName = document.querySelector("#last-name").value;
+  console.log(lastName);
+
+  let emailRegister = document.querySelector("#e-mail").value;
+  console.log(emailRegister);
+
+  let passwordRegister = document.querySelector("#password").value;
+  console.log(passwordRegister);
+
+  let passwordRepeat = document.querySelector("#repeat-password").value;
+  console.log(passwordRepeat);
+}
+
+
