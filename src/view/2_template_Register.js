@@ -25,13 +25,13 @@ export const register = () => {
       </containerLogin>
       `;
 
-  const login = viewRegister.querySelector("#login");
-  login.addEventListener("click", () => {
+  const goToLogin = viewRegister.querySelector("#login");
+  goToLogin.addEventListener("click", () => {
     window.location.href = "#/";
   });
 
-  const loginButton = viewRegister.querySelector("#signup-button");
-  loginButton.addEventListener("click", createAccount); 
+  const signUpButton = viewRegister.querySelector("#signup-button");
+  signUpButton.addEventListener("click", createAccount); 
   
   return viewRegister;
 };
@@ -43,14 +43,27 @@ export const createAccount = () => {
   let lastName = document.querySelector("#last-name").value;
   console.log(lastName);
 
-  let emailRegister = document.querySelector("#e-mail").value;
-  console.log(emailRegister);
+  let email = document.querySelector("#e-mail").value;
+  console.log(email);
 
-  let passwordRegister = document.querySelector("#password").value;
-  console.log(passwordRegister);
+  let password = document.querySelector("#password").value;
+  console.log(password);
 
   let passwordRepeat = document.querySelector("#repeat-password").value;
   console.log(passwordRepeat);
+
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then((user) => {
+    console.log(user)
+    // Signed in
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    alert("User already exists");
+    // ..
+  });
 }
 
 

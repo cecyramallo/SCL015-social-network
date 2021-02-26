@@ -12,9 +12,9 @@ export const login = () => {
         </div>
       </div> 
       <containerLogin class="containerLogin">
-        <input type="email" class="input_name" name="name" id="name" placeholder="E-mail"/>
-        <input type="password" class="input_name" name="name" id="name" placeholder="Password"/>
-        <button class="buttonLogin">Log in</button>
+        <input type="email" class="input_name" name="name" id="e-mail" placeholder="E-mail"/>
+        <input type="password" class="input_name" name="name" id="password" placeholder="Password"/>
+        <button class="buttonLogin" id="login-button">Log in</button>
         <p>Or log in with</p>
         <containerIcons class="containerIcons">
           <icons class="socialIcons" id='iconGoogle'><img src="images/02_Google_a.png" /></icons>
@@ -36,10 +36,48 @@ export const login = () => {
   //   window.location.href = "#/wall";
   // });
 
-  const login = viewLogin.querySelector("#signup");
-  login.addEventListener("click", () => {
+  const goToSignUp = viewLogin.querySelector("#signup");
+  goToSignUp.addEventListener("click", () => {
     window.location.href = "#/signup";
   });
+
+  const loginButton2 = viewLogin.querySelector("#login-button");
+  loginButton2.addEventListener("click", enterAccount);
   
   return viewLogin;
 };
+
+
+export const enterAccount = () => {
+  let email = document.querySelector("#e-mail").value;
+  console.log(email);
+
+  let password = document.querySelector("#password").value;
+  console.log(password);
+  
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((user) => {
+    console.log(user)
+    window.location.href = "#/wall";
+    // Signed in
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    alert("User doesn´t exist");
+  });
+}
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    var uid = user.uid;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});
+
