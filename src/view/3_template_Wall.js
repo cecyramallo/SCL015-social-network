@@ -1,5 +1,4 @@
 import { showTemplate } from "../router.js";
-//import { profile } from "./view/4_template_Profile.js";
 
 export const wall = () => {
   const viewWall = document.createElement("div");
@@ -12,19 +11,52 @@ export const wall = () => {
       </div> 
       <p>This is your wall</p>
       <br>
+      <button id="new-post-button">Write a new post</button>
+      <br>
       <button id="go-profile" href="#/profile">Go to your profile</button>
+      <br>
       <button id="logout" href="#/">Log out</button>
+      <br>
+      <div id="post-container"></div>
       `;
 
+  //Botón para escribir un nuevo post, que manda al 5_template_Crate_Post.js
+  const goPost = viewWall.querySelector("#new-post-button");
+  goPost.addEventListener("click",() => {
+    window.location.href = "#/post";
+  });
+
+  //Botón para ir al perfil, que manda al 4_template_Profile.js
   const goProfile = viewWall.querySelector("#go-profile");
   goProfile.addEventListener("click",() => {
     window.location.href = "#/profile";
   });
   
+  //Botón para salir, que manda al 1_template_Login.js
   const logout = viewWall.querySelector("#logout");
   logout.addEventListener("click",() => {
     window.location.href = "#/";
   });
 
+  const db = firebase.firestore();
+  displayPost(viewWall, db)
+
   return viewWall;
 };
+
+//Función con Firebase que muestra en el div vacío #post-container los títulos y textos de los post que se crean
+export const displayPost = (container, db) => {
+  const outputData = container.querySelector('#post-container');
+  db.collection("posts").get().then((querySnapshot) => {
+    outputData.innerHTML = ""
+    querySnapshot.forEach((doc) => {
+      outputData.innerHTML += `
+      <div class="new-post">
+        <p>${doc.data().Title}</p>
+        <p>${doc.data().Text}</p>
+      </div>
+      `;
+      console.log(doc.data());
+    });
+  });
+}
