@@ -47,6 +47,7 @@ export const wall = () => {
 //Función con Firebase que muestra en el div vacío #post-container los títulos y textos de los post que se crean
 export const displayPost = (container, db) => {
   const outputData = container.querySelector('#post-container');
+  //Aqui tendria que ir el metodo para ordenar .orderBy y deberia quedar orderBy.get
   db.collection("posts").get().then((querySnapshot) => {
     outputData.innerHTML = ""
     querySnapshot.forEach((doc) => {
