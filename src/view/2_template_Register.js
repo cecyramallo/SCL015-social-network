@@ -55,6 +55,33 @@ export const createAccount = () => {
   firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((user) => {
     console.log(user)
+    const userCreated = firebase.auth().currentUser;
+    userCreated.updateProfile({
+       
+    });
+    userCreated.sendEmailVerification().then(function() {
+      alert("E-mail sent"); 
+    }).catch(function(error) {
+      // An error happened.
+    });
+    // if (userCreated != null) {
+    //   firstName = userCreated.displayName;
+    //   console.log(firstName) 
+    // }
+    //     var name, email, photoUrl, uid, emailVerified;
+
+// if (user != null) {
+//   name = user.displayName;
+//   email = user.email;
+//   photoUrl = user.photoURL;
+//   emailVerified = user.emailVerified;
+//   uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+//                    // this value to authenticate with your backend server, if
+//                    // you have one. Use User.getToken() instead.
+// }
+    
+
+    
     // Signed in
     // ...
   })

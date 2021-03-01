@@ -49,4 +49,4 @@ export const post = () => {
     });
   })
   return viewPost;
-};
+}; 

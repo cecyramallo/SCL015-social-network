@@ -58,9 +58,13 @@ export const enterAccount = () => {
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then((user) => {
     console.log(user)
-    window.location.href = "#/wall";
-    // Signed in
-    // ...
+    if (user.user.emailVerified === true) {
+      window.location.href = "#/wall";  
+    } else {
+      alert("Please, verify your e-mail");
+    }
+    
+
   })
   .catch((error) => {
     var errorCode = error.code;
