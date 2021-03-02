@@ -55,6 +55,10 @@ export const displayPost = (container, db) => {
       <div class="new-post">
         <p>${doc.data().Title}</p>
         <p>${doc.data().Text}</p>
+        <br>
+        <button>Like</button>
+        <button>Edit</button>
+        <button>Delete</button>
       </div>
       `;
       console.log(doc.data());

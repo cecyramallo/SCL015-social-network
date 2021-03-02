@@ -39,7 +39,7 @@ export const post = () => {
     //Se crea la colección "posts" en Firebase
     db.collection("posts").add({
         Title: title,
-        Text: text
+        Text: text,
       })
       .then(function (post) {
         console.log("Document written with ID: ", post.id);

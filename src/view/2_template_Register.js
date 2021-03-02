@@ -1,4 +1,5 @@
 import { showTemplate } from "../router.js";
+import { go_google } from "../js/functions.js";
 
 export const register = () => {
   const viewRegister = document.createElement("div");
@@ -18,12 +19,18 @@ export const register = () => {
         <button class="buttonLogin" id="signup-button">Sign up</button>
         <p>Or sign up with</p>
         <containerIcons class="containerIcons">
-          <icons class="socialIcons"><img src="images/02_Google_a.png" onclick="go_google()"/></icons>
+          <icons class="socialIcons" id="iconGoogle"><img src="images/02_Google_a.png" /></icons>
           <icons class="socialIcons"><img src="images/01_Facebook.png" onclick="go_facebook()"/></icons>
         </containerIcons>
         <p id='login'>Do you already have an account? Log in!</p>
       </containerLogin>
       `;
+
+  const iconGoogle = viewRegister.querySelector("#iconGoogle");
+  iconGoogle.addEventListener("click",() => {
+    go_google(showTemplate());
+    window.location.href = "#/wall";
+  });
 
   const goToLogin = viewRegister.querySelector("#login");
   goToLogin.addEventListener("click", () => {
@@ -54,8 +61,9 @@ export const createAccount = () => {
 
   firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((user) => {
-    console.log(user)
+    console.log(user);
     const userCreated = firebase.auth().currentUser;
+    console.log(userCreated);
     userCreated.updateProfile({
        
     });
