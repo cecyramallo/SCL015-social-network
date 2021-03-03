@@ -2,8 +2,6 @@
 import { login } from '../view/1_template_Login.js';
 import { changeRoute } from "../router.js";
 
-
-
 const init = () => {
   document.getElementById("root").appendChild(login());
   window.addEventListener("hashchange", () => {
@@ -11,4 +9,3 @@ const init = () => {
   });
 };
 window.addEventListener("load", init);
-
