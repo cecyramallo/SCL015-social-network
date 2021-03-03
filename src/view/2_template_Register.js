@@ -17,7 +17,7 @@ export const register = () => {
         <input type="password" class="input_name" name="name" id="password" placeholder="Password"/>
         <input type="password" class="input_name" name="name" id="repeat-password" placeholder="Repeat password"/>
         <button class="buttonLogin" id="signup-button">Sign up</button>
-        <p>Or sign up with</p>
+        <p>Or log in with</p>
         <containerIcons class="containerIcons">
           <icons class="socialIcons" id="iconGoogle"><img src="images/02_Google_a.png" /></icons>
           <icons class="socialIcons"><img src="images/01_Facebook.png" onclick="go_facebook()"/></icons>
