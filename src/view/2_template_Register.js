@@ -40,16 +40,37 @@ export const register = () => {
   const signUpButton = viewRegister.querySelector("#signup-button");
   signUpButton.addEventListener("click", createAccount); 
   
+
+  const db = firebase.firestore();
+
+  const taskForm = viewRegister.querySelector('#signup-button');
+  taskForm.addEventListener('click', e => {
+    let firstName = document.querySelector("#first-name").value;
+    console.log(firstName);
+    let lastName = document.querySelector("#last-name").value;
+    console.log(lastName);
+    let email = document.querySelector("#e-mail").value;
+    console.log(email);
+    
+    //Se crea la colección "posts" en Firebase
+    db.collection("users").add({
+        FirstName: firstName,
+        LastName: lastName,
+        Email: email,
+    })
+      .then(function (currentUser) {
+        let userId = firebase.auth().currentUser.uid;
+        console.log(userId, "network");
+        // console.log("User created", currentUser.uid);
+      })
+      .catch(function (error) {
+        
+    });
+  })
   return viewRegister;
 };
 
 export const createAccount = () => {
-  let firstName = document.querySelector("#first-name").value;
-  console.log(firstName);
-  
-  let lastName = document.querySelector("#last-name").value;
-  console.log(lastName);
-
   let email = document.querySelector("#e-mail").value;
   console.log(email);
 
