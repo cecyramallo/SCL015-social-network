@@ -3,6 +3,29 @@ import { showTemplate } from "../router.js";
 export const wall = () => {
   const viewWall = document.createElement("div");
   viewWall.innerHTML = `
+<header>
+  <div class="panel">
+   <a href="#/wall" title="Close" class="panel-close">&times;</a>
+   <ul class="menu">
+			<li><a href="#">Profile</a></li>
+			<li><a href="#">Settings</a></li>
+			<li><a href="#">Log out</a></li>
+	 </ul>
+  </div>
+   <a href="#/wall" class="toggle">
+   <img src= "../images/menu.png" width="35px" >
+  </a>	
+</header>
+      <div class="logo">
+       <img src= "../images/parentbook.png" width="40%" >
+      </div>
+      </div> 
+      <p>This is your wall</p>
+      <br>
+      <button id="go-profile" href="#/profile">Go to your profile</button>
+      <button id="logout" href="#/">Log out</button>
+      `;
+      `
       <h1 href="#/">PARENTS' WALL</h1>
       <div class="container">
         <div class="box" id="foto">
@@ -20,7 +43,7 @@ export const wall = () => {
       <div id="post-container"></div>
       `;
 
-  //Botón para escribir un nuevo post, que manda al 5_template_Crate_Post.js
+  //Botón para escribir un nuevo post, que manda al 5_template_Create_Post.js
   const goPost = viewWall.querySelector("#new-post-button");
   goPost.addEventListener("click",() => {
     window.location.href = "#/post";
@@ -32,6 +55,21 @@ export const wall = () => {
     window.location.href = "#/profile";
   });
   
+  //menu desplegable 
+  const button = viewWall.querySelector(".toggle");
+  const panel = viewWall.querySelector(".panel");
+  const close = viewWall.querySelector(".panel-close");
+
+  button.addEventListener("click", () => {
+    panel.classList.toggle("open");
+  });
+
+  close.addEventListener("click", () => {
+    panel.classList.toggle("close");
+  });
+    return viewWall;
+  };
+
   //Botón para salir, que manda al 1_template_Login.js
   const logout = viewWall.querySelector("#logout");
   logout.addEventListener("click",() => {
