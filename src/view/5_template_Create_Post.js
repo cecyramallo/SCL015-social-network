@@ -35,11 +35,14 @@ export const post = () => {
   taskForm.addEventListener('click', e => {
     const title = document.getElementById('post-title').value;
     const text = document.getElementById('post-text').value;
+    const author = firebase.auth().currentUser.uid;
+    console.log(author, "network");
 
     //Se crea la colección "posts" en Firebase
     db.collection("posts").add({
         Title: title,
         Text: text,
+        Author: author,
       })
       .then(function (post) {
         console.log("Document written with ID: ", post.id);

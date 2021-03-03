@@ -35,7 +35,12 @@ export const wall = () => {
   //Botón para salir, que manda al 1_template_Login.js
   const logout = viewWall.querySelector("#logout");
   logout.addEventListener("click",() => {
-    window.location.href = "#/";
+    firebase.auth().signOut().then(() => {
+      console.log("Logged out");
+      window.location.href = "#/";
+    }).catch((error) => {
+      console.log("Problem loging out");
+    });    
   });
 
   const db = firebase.firestore();
