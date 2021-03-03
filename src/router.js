@@ -1,55 +1,44 @@
-import { login } from "./view/1templateLogin.js";
-import { register } from "./view/2templateRegister.js";
-import { wall } from "./view/4templateWall.js";
+import { login } from "./view/1_template_Login.js";
+import { register } from "./view/2_template_Register.js";
+import { wall } from "./view/3_template_Wall.js";
+import { profile } from "./view/4_template_Profile.js";
 
-export const changeRoute=(hash)=>{
-    if(hash==='#/'){
-        return showTemplate(hash)
-    }else return showTemplate(hash)
-}
-
-const showTemplate =(hash)=>{
-    const containerRoot = document.getElementById("root");
-    containerRoot.innerHTML='';
-    switch (hash) {
-        case "login":
-          //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1          
-          containerRoot.appendChild(login());
-          break;
-        case "register":
-          //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
-          containerRoot.appendChild(register());
-          break;    
-        case "wall":
-          //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
-          containerRoot.appendChild(wall());
-          break;
-        default:
-          //Declaraciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
-          containerRoot.appendChild(wall());
-          break;
-      }
-}
-export const router = (ruta) => {
-  document.getElementById("root").innerHTML = "";
-  switch (ruta) {
-    case "login":
-      //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
-      
-      document.getElementById("root").appendChild(login());
+export const showTemplate = (hash) => {
+  const containerRoot = document.getElementById("root");
+  containerRoot.innerHTML='';
+  switch (hash) {
+    case '':
+      containerRoot.appendChild(login());
       break;
-    case "register":
-      //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
-      document.getElementById("root").appendChild(register());
+    case '#/':
+      containerRoot.appendChild(login());
       break;
-
-    case "wall":
-      //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
-      document.getElementById("root").appendChild(wall());
+    case '#/signup':
+      containerRoot.appendChild(register());
+      break;    
+    case '#/wall':
+      containerRoot.appendChild(wall());
+      break;
+    case '#/profile':
+      containerRoot.appendChild(profile());
       break;
     default:
-      //Declaraciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
-      document.getElementById("root").appendChild(wall());
-      break;
+      containerRoot.innerHTML = `<h2>Oops! 404: Not found</h2>`;
+  }
+};
+
+export const changeRoute = (hash) => {
+  if (hash==='#/') {
+    return showTemplate(hash);
+  } else if (hash === '#/') {
+    return showTemplate(hash);
+  } else if (hash === '#/signup') {
+    return showTemplate(hash);
+  } else if (hash === '#/wall') {
+    return showTemplate(hash);
+  } else if (hash === '#/profile') {
+    return showTemplate(hash);
+  } else {
+    return showTemplate(hash);
   }
 };
