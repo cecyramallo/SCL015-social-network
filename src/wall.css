@@ -15,8 +15,11 @@
 
 .new-post-container{
   align-content: center;
-  background-color: #f3aa92;
-  border-radius: 10px;
+  background-color: #fefefe;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #f3aa92;
+  border-radius: 15px;
   margin: 15px;
 }
 
