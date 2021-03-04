@@ -63,8 +63,6 @@ export const enterAccount = () => {
     } else {
       alert("Please, verify your e-mail");
     }
-    
-
   })
   .catch((error) => {
     var errorCode = error.code;

@@ -1,0 +1,43 @@
+#wall-header{
+  align-items: center;
+  margin-top: -15%;
+}
+
+#new-post-button{
+  margin-left: 28%;
+  margin-top: 5%;
+  border-radius: 15px;
+  height: 40px;
+  width: 150px;
+  color: #fefefe;
+  background-color: #b09b95;
+}
+
+.new-post-container{
+  align-content: center;
+  background-color: #f3aa92;
+  border-radius: 10px;
+  margin: 15px;
+}
+
+.new-post-title{
+  color: #1f3361;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 3%;
+}
+
+.new-post-text{
+  color: #4f4f4f;
+  margin-left: 3%;
+}
+
+.wall-button-container{
+  margin-left: 25%
+}
+
+.wall-button{
+  height: 15px;
+  color: #fefefe;
+  background-color: #b09b95;
+}

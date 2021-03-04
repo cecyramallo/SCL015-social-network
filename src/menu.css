@@ -71,12 +71,9 @@ menu li:hover{
   background: #fefefe;
   color: #000000;
 }
-logo{
-  justify-content: center;
-  top: 5px;
-}
 
-img{
-display:block;
-margin:auto;
+.logo img{
+  display:block;
+  margin:auto;
+  width: 60%;
 }

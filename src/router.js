@@ -3,6 +3,7 @@ import { register } from "./view/2_template_Register.js";
 import { wall } from "./view/3_template_Wall.js";
 import { profile } from "./view/4_template_Profile.js";
 import { post } from "./view/5_template_Create_Post.js";
+import { settings } from "./view/6_template_Settings.js";
 
 export const showTemplate = (hash) => {
   const containerRoot = document.getElementById("root");
@@ -26,6 +27,9 @@ export const showTemplate = (hash) => {
     case '#/post':
       containerRoot.appendChild(post());
       break;
+    case '#/settings':
+      containerRoot.appendChild(settings());
+      break;
     default:
       containerRoot.innerHTML = `<h2>Oops! 404: Not found</h2>`;
   }
@@ -43,6 +47,8 @@ export const changeRoute = (hash) => {
   } else if (hash === '#/profile') {
     return showTemplate(hash);
   } else if (hash === '#/post') {
+    return showTemplate(hash);
+  } else if (hash === '#/settings') {
     return showTemplate(hash);
   } else {
     return showTemplate(hash);

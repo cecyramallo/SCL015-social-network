@@ -3,42 +3,29 @@ import { showTemplate } from "../router.js";
 export const wall = () => {
   const viewWall = document.createElement("div");
   viewWall.innerHTML = `
-<header>
-  <div class="panel">
-   <a href="#/wall" title="Close" class="panel-close">&times;</a>
-   <ul class="menu">
-			<li><a href="#">Profile</a></li>
-			<li><a href="#">Settings</a></li>
-			<li><a href="#">Log out</a></li>
-	 </ul>
-  </div>
-   <a href="#/wall" class="toggle">
-   <img src= "../images/menu.png" width="35px" >
-  </a>	
-</header>
+      <header>
+        <div class="panel">
+        <a href="#/wall" title="Close" class="panel-close">&times;</a>
+        <ul class="menu">
+            <li><a id="go-profile" href="#/profile">Profile</a></li>
+            <li><a id="go-settings" href="#/settings">Settings</a></li>
+            <li><a id="logout" href="#/">Log out</a></li>
+        </ul>
+        </div>
+        <a href="#/wall" class="toggle">
+        <img src= "../images/menu.png" width="35px" >
+        </a>	
+      </header>
+
       <div class="logo">
        <img src= "../images/parentbook.png" width="40%" >
       </div>
-      </div> 
-      <p>This is your wall</p>
-      <br>
-      <button id="go-profile" href="#/profile">Go to your profile</button>
-      <button id="logout" href="#/">Log out</button>
-      `;
-      `
-      <h1 href="#/">PARENTS' WALL</h1>
-      <div class="container">
-        <div class="box" id="foto">
-          <img src="images/04_Family_a.jpg"/>
-        </div>
-      </div> 
-      <p>This is your wall</p>
-      <br>
+
+      <div id="wall-header">
+      <p>Welcome to your wall</p>
       <button id="new-post-button">Write a new post</button>
-      <br>
-      <button id="go-profile" href="#/profile">Go to your profile</button>
-      <br>
-      <button id="logout" href="#/">Log out</button>
+      </div>
+
       <br>
       <div id="post-container"></div>
       `;
@@ -47,12 +34,6 @@ export const wall = () => {
   const goPost = viewWall.querySelector("#new-post-button");
   goPost.addEventListener("click",() => {
     window.location.href = "#/post";
-  });
-
-  //Botón para ir al perfil, que manda al 4_template_Profile.js
-  const goProfile = viewWall.querySelector("#go-profile");
-  goProfile.addEventListener("click",() => {
-    window.location.href = "#/profile";
   });
   
   //menu desplegable 
@@ -67,8 +48,18 @@ export const wall = () => {
   close.addEventListener("click", () => {
     panel.classList.toggle("close");
   });
-    return viewWall;
-  };
+
+  //Botón para ir al perfil, que manda al 4_template_Profile.js
+  const goProfile = viewWall.querySelector("#go-profile");
+  goProfile.addEventListener("click",() => {
+    window.location.href = "#/profile";
+  });
+
+  //Botón para ir a la configuración, que manda al 6_template_Settings.js
+  const goSettings = viewWall.querySelector("#go-settings");
+  goSettings.addEventListener("click",() => {
+    window.location.href = "#/settings";
+  });
 
   //Botón para salir, que manda al 1_template_Login.js
   const logout = viewWall.querySelector("#logout");
@@ -95,13 +86,16 @@ export const displayPost = (container, db) => {
     outputData.innerHTML = ""
     querySnapshot.forEach((doc) => {
       outputData.innerHTML += `
-      <div class="new-post">
-        <p>${doc.data().Title}</p>
-        <p>${doc.data().Text}</p>
+      <div class="new-post-container">
+        <p class="new-post-title">${doc.data().Title}</p>
+        <p class="new-post-text">${doc.data().Text}</p>
         <br>
-        <button>Like</button>
-        <button>Edit</button>
-        <button>Delete</button>
+        <div class="wall-button-container">
+          <button class="wall-button">Like</button>
+          <button class="wall-button">Comment</button>
+          <button class="wall-button">Edit</button>
+          <button class="wall-button">Delete</button>
+        </div>
       </div>
       `;
       console.log(doc.data());
