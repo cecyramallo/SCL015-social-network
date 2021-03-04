@@ -18,7 +18,7 @@ export const wall = () => {
       </header>
 
       <div class="logo">
-       <img src= "../images/parentbook.png" width="40%" >
+       <img src= "../images/parentbook.png">
       </div>
 
       <div id="wall-header">
