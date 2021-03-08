@@ -68,7 +68,7 @@ export const wall = () => {
       console.log("Logged out");
       window.location.href = "#/";
     }).catch((error) => {
-      console.log("Problem loging out");
+      console.log("Problem logging out");
     });    
   });
 
