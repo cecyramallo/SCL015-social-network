@@ -3,14 +3,26 @@ import { go_google } from "../js/functions.js";
 import { go_facebook } from "../js/functions.js";
 
 export const login = () => {
-  const viewLogin = document.createElement("div"); 
+  const viewLogin = document.createElement("div");
   viewLogin.innerHTML = `
-      <h1 href="#/">PARENTBOOK</h1>
-      <div class="container">
-        <div class="box">
-          <img src="images/04_Family_a.jpg"/>
-        </div>
-      </div> 
+     <div class="logo_1">
+       <img src= "../images/parentbook.png" width="5%">
+      
+   </div>
+   <div class="slider">
+    <ul>
+     <li>
+      <img src="images/04_Family_a.jpg" alt>
+  </li>
+     <li>
+      <img src="images/05_Family_b.jpg" alt>
+  </li>
+      <li>
+      <img src="images/06_Family_c.jpg" alt>
+  </li>
+    </ul>
+  </div>
+  </div> 
       <containerLogin class="containerLogin">
         <input type="email" class="input_name" name="name" id="e-mail" placeholder="E-mail"/>
         <input type="password" class="input_name" name="name" id="password" placeholder="Password"/>
@@ -23,9 +35,9 @@ export const login = () => {
         <p id='signup'>Don't have an account yet? Sign up!</p>
       </containerLogin>
       `;
-      
+
   const iconGoogle = viewLogin.querySelector("#iconGoogle");
-  iconGoogle.addEventListener("click",() => {
+  iconGoogle.addEventListener("click", () => {
     go_google(showTemplate());
     window.location.href = "#/wall";
   });
@@ -43,10 +55,9 @@ export const login = () => {
 
   const loginButton2 = viewLogin.querySelector("#login-button");
   loginButton2.addEventListener("click", enterAccount);
-  
+
   return viewLogin;
 };
-
 
 export const enterAccount = () => {
   let email = document.querySelector("#e-mail").value;
@@ -54,22 +65,24 @@ export const enterAccount = () => {
 
   let password = document.querySelector("#password").value;
   console.log(password);
-  
-  firebase.auth().signInWithEmailAndPassword(email, password)
-  .then((user) => {
-    console.log(user)
-    if (user.user.emailVerified === true) {
-      window.location.href = "#/wall";  
-    } else {
-      alert("Please, verify your e-mail");
-    }
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    alert("User doesn´t exist");
-  });
-}
+
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then((user) => {
+      console.log(user);
+      if (user.user.emailVerified === true) {
+        window.location.href = "#/wall";
+      } else {
+        alert("Please, verify your e-mail");
+      }
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      alert("User doesn´t exist");
+    });
+};
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
