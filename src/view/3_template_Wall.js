@@ -22,7 +22,7 @@ export const wall = () => {
       </div>
 
       <div id="wall-header">
-      <p>Welcome to your wall</p>
+      <h2>Welcome to your wall</h2>
       <button id="new-post-button">Write a new post</button>
       </div>
 

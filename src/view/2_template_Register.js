@@ -4,13 +4,15 @@ import { go_google } from "../js/functions.js";
 export const register = () => {
   const viewRegister = document.createElement("div");
   viewRegister.innerHTML = `
-      <h1>PARENTBOOK</h1>
+      <div class="logo_register">
+       <img src= "../images/parentbook.png" width="50%">
+      </div>
       <div class="container">
         <div class="box">
           <img src="images/04_Family_a.jpg"/>
         </div>
       </div> 
-      <containerLogin class="containerLogin">
+      <containerRegister class="containerLogin">
         <input type="text" class="input_name" name="name" id="first-name" placeholder="First Name"/>
         <input type="text" class="input_name" name="name" id="last-name" placeholder="Last Name"/>
         <input type="email" class="input_name" name="name" id="e-mail" placeholder="E-mail"/>
