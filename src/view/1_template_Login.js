@@ -8,21 +8,21 @@ export const login = () => {
      <div class="logo_1">
        <img src= "../images/parentbook.png" width="5%">
       
-   </div>
-   <div class="slider">
-    <ul>
-     <li>
-      <img src="images/04_Family_a.jpg" alt>
-  </li>
-     <li>
-      <img src="images/05_Family_b.jpg" alt>
-  </li>
-      <li>
-      <img src="images/06_Family_c.jpg" alt>
-  </li>
-    </ul>
-  </div>
-  </div> 
+    </div>
+      <div class="slider">
+        <ul>
+          <li>
+            <img src="images/04_Family_a.jpg" alt>
+          </li>
+          <li>
+            <img src="images/05_Family_b.jpg" alt>
+          </li>
+          <li>
+            <img src="images/06_Family_c.jpg" alt>
+          </li>
+        </ul>
+      </div>
+    </div> 
       <containerLogin class="containerLogin">
         <input type="email" class="input_name" name="name" id="e-mail" placeholder="E-mail"/>
         <input type="password" class="input_name" name="name" id="password" placeholder="Password"/>

@@ -88,7 +88,7 @@ export const createAccount = () => {
     const userCreated = firebase.auth().currentUser;
     console.log(userCreated);
     userCreated.updateProfile({
-       
+       displayName
     });
     userCreated.sendEmailVerification().then(function() {
       alert("E-mail sent"); 
